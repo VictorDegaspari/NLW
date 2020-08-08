@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom'
 import PageHeader from '../../components/PageHeader'
 import './styles.css';
 import Input from '../../components/Input';
@@ -10,6 +11,8 @@ import api from '../../services/api';
 
 
 function TeacherForm() {
+    //redirecionamento apos acao do usuario
+    const history = useHistory();
     // * input api
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
@@ -57,6 +60,8 @@ function TeacherForm() {
             schedule: scheduleItems
         }).then(()=>{
             alert('Cadastro realizado com sucesso!')
+
+            history.push('/');
         }).catch(() =>{
             alert('Erro no cadastro')
         })
