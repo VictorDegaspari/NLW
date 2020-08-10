@@ -20,5 +20,3 @@
 
 ## Dependencias
 `yarn add create react-app`
-
-yarn add documentation-readme
